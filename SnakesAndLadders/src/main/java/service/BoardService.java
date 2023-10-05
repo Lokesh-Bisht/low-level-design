@@ -12,6 +12,7 @@ public interface BoardService {
     boolean hasLadder(int position);
     Snake getSnake(int position);
     Ladder getLadder(int position);
+    void setSnake(int id, int start, int end);
+    void setLadder(int id, int start, int end);
     void printBoard();
-    void setBoard(List<Snake> snakes, List<Ladder> ladders);
 }
