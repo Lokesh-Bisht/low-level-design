@@ -42,6 +42,18 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public void setSnake(int id, int start, int end) {
+        Snake snake = new Snake(start, end, "Snake " + id);
+        snakesHashMap.put(id, snake);
+    }
+
+    @Override
+    public void setLadder(int id, int start, int end) {
+        Ladder ladder = new Ladder(start, end, "Ladder "+ id);
+        laddersHashMap.put(id, ladder);
+    }
+
+    @Override
     public void printBoard() {
         int totalCells = getTotalCells();
 
