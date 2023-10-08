@@ -1,17 +1,29 @@
 package models;
 
-import factory.Vehicle;
-
 public class Slot {
 
     private int slotNumber;
 
-    private boolean isEmpty;
+    private boolean isAvailable;
 
-    private Vehicle vehicle;
-
-    public Slot(int slotNumber, boolean isEmpty) {
+    public Slot(int slotNumber, boolean isAvailable) {
         this.slotNumber = slotNumber;
-        this.isEmpty = isEmpty;
+        this.isAvailable = isAvailable;
+    }
+
+    public int getSlotNumber() {
+        return slotNumber;
+    }
+
+    public void setSlotNumber(int slotNumber) {
+        this.slotNumber = slotNumber;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }
