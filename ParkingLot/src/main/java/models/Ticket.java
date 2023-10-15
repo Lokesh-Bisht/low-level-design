@@ -1,8 +1,9 @@
 package models;
 
 import enums.VehicleType;
+import factory.Vehicle;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Ticket {
@@ -15,12 +16,16 @@ public class Ticket {
 
     private String vehicleNumber;
 
-    private Date date;
+    private String vehicleColor;
 
-    public Ticket(VehicleType vehicleType, String vehicleNumber, Date date) {
+    private LocalDateTime date;
+
+    public Ticket(VehicleType vehicleType, int slotNumber, Vehicle vehicle, LocalDateTime date) {
         this.ticketId = UUID.randomUUID();
+        this.slotNumber = slotNumber;
         this.vehicleType = vehicleType;
-        this.vehicleNumber = vehicleNumber;
+        this.vehicleNumber = vehicle.getVehicleNumber();
+        this.vehicleColor = vehicle.getVehicleColor();
         this.date = date;
     }
 
@@ -52,11 +57,19 @@ public class Ticket {
         this.vehicleNumber = vehicleNumber;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
+    }
+
+    public String getVehicleColor() {
+        return vehicleColor;
+    }
+
+    public void setVehicleColor(String vehicleColor) {
+        this.vehicleColor = vehicleColor;
     }
 }
