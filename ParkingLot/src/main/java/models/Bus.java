@@ -1,5 +1,6 @@
 package models;
 
+import enums.VehicleType;
 import factory.Vehicle;
 
 public class Bus implements Vehicle {
@@ -7,6 +8,8 @@ public class Bus implements Vehicle {
     private String vehicleNumber;
 
     private String vehicleColor;
+
+    private VehicleType vehicleType;
 
     public Bus(String vehicleNumber, String vehicleColor) {
         this.vehicleNumber = vehicleNumber;
@@ -24,6 +27,11 @@ public class Bus implements Vehicle {
     }
 
     @Override
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    @Override
     public void setVehicleNumber(String vehicleNumber) {
         this.vehicleNumber = vehicleNumber;
     }
@@ -31,5 +39,10 @@ public class Bus implements Vehicle {
     @Override
     public void setVehicleColor(String vehicleColor) {
         this.vehicleColor = vehicleColor;
+    }
+
+    @Override
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
     }
 }
