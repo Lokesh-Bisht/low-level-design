@@ -1,38 +1,29 @@
 package service.impl;
 
+import exceptions.InvalidVehicleException;
+import exceptions.ParkingFullException;
 import factory.Vehicle;
-import models.Slot;
 import models.Ticket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import repository.SlotRepository;
 import service.ParkingService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class ParkingServiceImpl implements ParkingService {
 
     private static ParkingService parkingService;
 
-    private final List<Slot> carParkingSlots;
+    private final SlotRepository slotRepository;
 
-    private final List<Slot> busParkingSlots;
-
-    private final List<Slot> bikeParkingSlots;
-
-    public static final int CAR_PARKING_SLOTS = 200;
-
-    public static final int BUS_PARKING_SLOTS = 50;
-
-    public static final int BIKE_PARKING_SLOTS = 100;
-
-    public static final int TOTAL_PARKING_SLOTS = 350;
+    private static final Logger logger = LoggerFactory.getLogger(ParkingServiceImpl.class);
 
     private ParkingServiceImpl() {
-        this.carParkingSlots = new ArrayList<>();
-        this.busParkingSlots = new ArrayList<>();
-        this.bikeParkingSlots = new ArrayList<>();
+        slotRepository = SlotRepository.getInstance();
     }
 
-    public static ParkingService getParkingLot() {
+    public static ParkingService getInstance() {
         if (parkingService == null) {
             return new ParkingServiceImpl();
         }
@@ -40,28 +31,16 @@ public class ParkingServiceImpl implements ParkingService {
     }
 
     @Override
-    public void initializeParkingSlots() {
-        for (int i = 0; i < TOTAL_PARKING_SLOTS; ++i) {
-            int parkingSlots = 0;
-            while (parkingSlots < BIKE_PARKING_SLOTS) {
-                bikeParkingSlots.add(new Slot(i, true));
-                parkingSlots++;
+    public void park(Vehicle vehicle) {
+        try {
+            if (slotRepository.hasParkingSlots(vehicle.getVehicleType())) {
+                int slotNumber = slotRepository.reserveParkingSlot(vehicle.getVehicleType());
+                Ticket ticket =  new Ticket(vehicle.getVehicleType(), slotNumber, vehicle, LocalDateTime.now());
+                logger.info("Ticket: {}", ticket.toString());
             }
-            parkingSlots = 0;
-            while (parkingSlots < CAR_PARKING_SLOTS) {
-                carParkingSlots.add(new Slot(i, true));
-                parkingSlots++;
-            }
-            parkingSlots = 0;
-            while (parkingSlots < BUS_PARKING_SLOTS) {
-                busParkingSlots.add(new Slot(i, true));
-                parkingSlots++;
-            }
+            throw new ParkingFullException("Sorry, no space available. PARKING FULL!");
+        } catch (InvalidVehicleException | ParkingFullException ex) {
+            logger.error(ex.getMessage());
         }
-    }
-
-    @Override
-    public Ticket park(Vehicle vehicle) {
-        return null;
     }
 }
