@@ -6,8 +6,8 @@ import factory.Vehicle;
 import models.Ticket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import repository.SlotRepository;
 import service.ParkingService;
+import service.SlotService;
 
 import java.time.LocalDateTime;
 
@@ -15,12 +15,12 @@ public class ParkingServiceImpl implements ParkingService {
 
     private static ParkingService parkingService;
 
-    private final SlotRepository slotRepository;
+    private final SlotService slotService;
 
     private static final Logger logger = LoggerFactory.getLogger(ParkingServiceImpl.class);
 
     private ParkingServiceImpl() {
-        slotRepository = SlotRepository.getInstance();
+        slotService = SlotServiceImpl.getInstance();
     }
 
     public static ParkingService getInstance() {
@@ -33,8 +33,8 @@ public class ParkingServiceImpl implements ParkingService {
     @Override
     public void park(Vehicle vehicle) {
         try {
-            if (slotRepository.hasParkingSlots(vehicle.getVehicleType())) {
-                int slotNumber = slotRepository.reserveParkingSlot(vehicle.getVehicleType());
+            if (slotService.hasParkingSlots(vehicle.getVehicleType())) {
+                int slotNumber = slotService.reserveParkingSlot(vehicle.getVehicleType());
                 Ticket ticket =  new Ticket(vehicle.getVehicleType(), slotNumber, vehicle, LocalDateTime.now());
                 logger.info("Ticket: {}", ticket.toString());
             }

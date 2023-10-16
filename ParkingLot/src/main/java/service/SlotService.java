@@ -1,11 +1,10 @@
 package service;
 
-import models.Slot;
-import models.Ticket;
+import enums.VehicleType;
+import exceptions.InvalidVehicleException;
 
 public interface SlotService {
 
-    void initializeParkingSlots();
-    Slot reserveParkingSlot(Ticket ticket);
-    boolean freeParkingSlot(int parking);
+    boolean hasParkingSlots(VehicleType vehicleType) throws InvalidVehicleException;
+    int reserveParkingSlot(VehicleType vehicleType);
 }
