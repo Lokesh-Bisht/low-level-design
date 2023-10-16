@@ -3,6 +3,7 @@ package service.impl;
 import enums.VehicleType;
 import exceptions.InvalidVehicleException;
 import models.Slot;
+import models.Ticket;
 import service.SlotService;
 
 import java.util.ArrayList;
@@ -88,5 +89,18 @@ public class SlotServiceImpl implements SlotService {
             busParkingSlots.get(slotNumber).setAvailable(false);
         }
         return slotNumber;
+    }
+
+    @Override
+    public void freeParkingSlot(Ticket ticket) {
+        VehicleType vehicleType = ticket.getVehicleType();
+        int slotNumber = ticket.getSlotNumber();
+        if (VehicleType.BIKE.equals(vehicleType)) {
+            bikeParkingSlots.get(slotNumber).setAvailable(true);
+        } else if (VehicleType.CAR.equals(vehicleType)) {
+            carParkingSlots.get(slotNumber).setAvailable(true);
+        } else if (VehicleType.BUS.equals(vehicleType)) {
+            busParkingSlots.get(slotNumber).setAvailable(true);
+        }
     }
 }
