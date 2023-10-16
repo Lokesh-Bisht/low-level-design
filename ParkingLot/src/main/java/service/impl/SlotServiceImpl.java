@@ -1,15 +1,16 @@
-package repository;
+package service.impl;
 
 import enums.VehicleType;
 import exceptions.InvalidVehicleException;
 import models.Slot;
+import service.SlotService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SlotRepository {
+public class SlotServiceImpl implements SlotService {
 
-    private static SlotRepository slotRepository;
+    private static SlotService slotService;
 
     private static final List<Slot> carParkingSlots;
 
@@ -32,13 +33,13 @@ public class SlotRepository {
         initializeParkingSlots();
     }
 
-    private SlotRepository() {}
+    private SlotServiceImpl() {}
 
-    public static SlotRepository getSlotRepository() {
-        if (slotRepository == null) {
-            return new SlotRepository();
+    public static SlotService getInstance() {
+        if (slotService == null) {
+            return new SlotServiceImpl();
         }
-        return slotRepository;
+        return slotService;
     }
 
     private static void initializeParkingSlots() {
@@ -61,6 +62,7 @@ public class SlotRepository {
         }
     }
 
+    @Override
     public boolean hasParkingSlots(VehicleType vehicleType) throws InvalidVehicleException {
         if (VehicleType.CAR.equals(vehicleType)) {
             return carParkingSlots.size() != CAR_PARKING_SLOTS;
@@ -72,6 +74,7 @@ public class SlotRepository {
         throw new InvalidVehicleException("Invalid vehicle! Parking is available only for car, bus, and bike.");
     }
 
+    @Override
     public int reserveParkingSlot(VehicleType vehicleType) {
         int slotNumber = -1;
         if (VehicleType.BIKE.equals(vehicleType)) {
