@@ -6,4 +6,5 @@ import models.Ticket;
 public interface ParkingService {
 
     void park(Vehicle vehicle);
+    void unPark(Ticket ticket);
 }

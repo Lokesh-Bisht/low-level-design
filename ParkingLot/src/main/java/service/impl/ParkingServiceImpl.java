@@ -7,6 +7,7 @@ import models.Ticket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import service.ParkingService;
+import service.PricingService;
 import service.SlotService;
 
 import java.time.LocalDateTime;
@@ -17,10 +18,13 @@ public class ParkingServiceImpl implements ParkingService {
 
     private final SlotService slotService;
 
+    private final PricingService pricingService;
+
     private static final Logger logger = LoggerFactory.getLogger(ParkingServiceImpl.class);
 
     private ParkingServiceImpl() {
         slotService = SlotServiceImpl.getInstance();
+        pricingService = PricingServiceImpl.getInstance();
     }
 
     public static ParkingService getInstance() {
@@ -42,5 +46,13 @@ public class ParkingServiceImpl implements ParkingService {
         } catch (InvalidVehicleException | ParkingFullException ex) {
             logger.error(ex.getMessage());
         }
+    }
+
+    @Override
+    public void unPark(Ticket ticket) {
+        int price = pricingService.generatePrice(ticket.getVehicleType(), LocalDateTime.now(), ticket.getDate());
+        logger.info("Parking fee is: {}", price);
+        slotService.freeParkingSlot(ticket);
+        logger.info("Have a good day :)");
     }
 }
