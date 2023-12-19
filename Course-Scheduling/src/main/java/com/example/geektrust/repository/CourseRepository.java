@@ -1,0 +1,47 @@
+/**
+ * Author: Lokesh Bisht
+ */
+
+package com.example.geektrust.repository;
+
+import com.example.geektrust.models.Course;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class CourseRepository {
+
+    private static CourseRepository courseRepository;
+
+    private HashSet<String> instructors;
+
+    private HashMap<String, Course> courseOfferingIdToCourseHashMap;
+
+    private CourseRepository() {
+        instructors = new HashSet<>();
+        courseOfferingIdToCourseHashMap = new HashMap<>();
+    }
+
+    public static CourseRepository getInstance() {
+        if (courseRepository == null) {
+            return courseRepository = new CourseRepository();
+        }
+        return courseRepository;
+    }
+
+    public HashSet<String> getInstructors() {
+        return instructors;
+    }
+
+    public HashMap<String, Course> getCourseOfferingIdToCourseHashMap() {
+        return courseOfferingIdToCourseHashMap;
+    }
+
+    public void saveInstructor(String instructor) {
+        instructors.add(instructor);
+    }
+
+    public void saveCourse(String courseOfferingId, Course course) {
+        courseOfferingIdToCourseHashMap.put(courseOfferingId, course);
+    }
+}
