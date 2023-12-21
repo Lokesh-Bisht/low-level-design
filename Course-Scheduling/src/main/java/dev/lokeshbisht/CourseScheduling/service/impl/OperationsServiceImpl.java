@@ -2,13 +2,13 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.service.impl;
+package dev.lokeshbisht.service.impl;
 
-import com.example.geektrust.dto.CourseAllotment;
-import com.example.geektrust.models.Course;
-import com.example.geektrust.service.CourseService;
-import com.example.geektrust.service.OperationsService;
-import com.example.geektrust.service.RegistrationService;
+import dev.lokeshbisht.dto.CourseAllotment;
+import dev.lokeshbisht.models.Course;
+import dev.lokeshbisht.service.CourseService;
+import dev.lokeshbisht.service.OperationsService;
+import dev.lokeshbisht.service.RegistrationService;
 
 import java.util.List;
 

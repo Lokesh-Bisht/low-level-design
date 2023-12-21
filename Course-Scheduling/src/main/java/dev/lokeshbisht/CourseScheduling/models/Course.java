@@ -2,7 +2,7 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.models;
+package dev.lokeshbisht.models;
 
 public class Course {
 
