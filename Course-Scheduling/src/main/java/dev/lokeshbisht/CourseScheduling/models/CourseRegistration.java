@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.models;
+package dev.lokeshbisht.models;
 
-import com.example.geektrust.enums.CourseStatus;
+import dev.lokeshbisht.enums.CourseStatus;
 
 public class CourseRegistration {
 

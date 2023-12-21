@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.service;
+package dev.lokeshbisht.service;
 
-import com.example.geektrust.dto.CourseAllotment;
+import dev.lokeshbisht.dto.CourseAllotment;
 
 import java.util.List;
 

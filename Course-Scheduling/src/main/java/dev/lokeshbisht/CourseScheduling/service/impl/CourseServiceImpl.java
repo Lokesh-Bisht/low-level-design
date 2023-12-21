@@ -4,13 +4,13 @@
  * Licensed under the Apache Software License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package com.example.geektrust.service.impl;
+package dev.lokeshbisht.service.impl;
 
-import com.example.geektrust.enums.Errors;
-import com.example.geektrust.exceptions.ValidationException;
-import com.example.geektrust.models.Course;
-import com.example.geektrust.repository.CourseRepository;
-import com.example.geektrust.service.CourseService;
+import dev.lokeshbisht.enums.Errors;
+import dev.lokeshbisht.exceptions.ValidationException;
+import dev.lokeshbisht.models.Course;
+import dev.lokeshbisht.repository.CourseRepository;
+import dev.lokeshbisht.service.CourseService;
 
 public class CourseServiceImpl implements CourseService {
 

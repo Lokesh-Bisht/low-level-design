@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.repository;
+package dev.lokeshbisht.repository;
 
-import com.example.geektrust.models.CourseRegistration;
+import dev.lokeshbisht.models.CourseRegistration;
 
 import java.util.HashMap;
 
