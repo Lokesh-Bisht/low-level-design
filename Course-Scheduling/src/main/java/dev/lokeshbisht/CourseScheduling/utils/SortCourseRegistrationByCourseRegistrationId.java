@@ -1,6 +1,6 @@
-package com.example.geektrust.utils;
+package dev.lokeshbisht.utils;
 
-import com.example.geektrust.models.CourseRegistration;
+import dev.lokeshbisht.models.CourseRegistration;
 
 import java.util.Comparator;
 

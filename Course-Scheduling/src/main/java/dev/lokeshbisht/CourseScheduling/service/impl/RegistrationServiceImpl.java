@@ -2,18 +2,18 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.service.impl;
+package dev.lokeshbisht.service.impl;
 
-import com.example.geektrust.dto.CourseAllotment;
-import com.example.geektrust.enums.CourseStatus;
-import com.example.geektrust.enums.Errors;
-import com.example.geektrust.exceptions.ValidationException;
-import com.example.geektrust.models.Course;
-import com.example.geektrust.models.CourseRegistration;
-import com.example.geektrust.repository.CourseRegistrationRepository;
-import com.example.geektrust.repository.CourseRepository;
-import com.example.geektrust.service.RegistrationService;
-import com.example.geektrust.utils.SortCourseRegistrationByCourseRegistrationId;
+import dev.lokeshbisht.dto.CourseAllotment;
+import dev.lokeshbisht.enums.CourseStatus;
+import dev.lokeshbisht.enums.Errors;
+import dev.lokeshbisht.exceptions.ValidationException;
+import dev.lokeshbisht.models.Course;
+import dev.lokeshbisht.models.CourseRegistration;
+import dev.lokeshbisht.repository.CourseRegistrationRepository;
+import dev.lokeshbisht.repository.CourseRepository;
+import dev.lokeshbisht.service.RegistrationService;
+import dev.lokeshbisht.utils.SortCourseRegistrationByCourseRegistrationId;
 
 import java.util.ArrayList;
 import java.util.HashMap;

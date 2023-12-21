@@ -2,7 +2,7 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.service;
+package dev.lokeshbisht.service;
 
 public interface OperationsService {
 

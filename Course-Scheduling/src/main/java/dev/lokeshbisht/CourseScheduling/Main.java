@@ -1,10 +1,10 @@
 /**
  * Author: Lokesh Bisht
  */
-package com.example.geektrust;
+package dev.lokeshbisht;
 
-import com.example.geektrust.service.OperationsService;
-import com.example.geektrust.service.impl.OperationsServiceImpl;
+import dev.lokeshbisht.service.OperationsService;
+import dev.lokeshbisht.service.impl.OperationsServiceImpl;
 
 import java.io.FileInputStream;
 import java.io.IOException;

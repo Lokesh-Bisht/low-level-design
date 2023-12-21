@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package com.example.geektrust.service;
+package dev.lokeshbisht.service;
 
-import com.example.geektrust.models.Course;
+import dev.lokeshbisht.models.Course;
 
 public interface CourseService {
 
