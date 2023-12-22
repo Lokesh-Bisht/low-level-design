@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.models;
+package dev.lokeshbisht.CourseScheduling.models;
 
-import dev.lokeshbisht.enums.CourseStatus;
+import dev.lokeshbisht.CourseScheduling.enums.CourseStatus;
 
 public class CourseRegistration {
 

@@ -1,10 +1,10 @@
 /**
  * Author: Lokesh Bisht
  */
-package dev.lokeshbisht;
+package dev.lokeshbisht.CourseScheduling;
 
-import dev.lokeshbisht.service.OperationsService;
-import dev.lokeshbisht.service.impl.OperationsServiceImpl;
+import dev.lokeshbisht.CourseScheduling.service.OperationsService;
+import dev.lokeshbisht.CourseScheduling.service.impl.OperationsServiceImpl;
 
 import java.io.FileInputStream;
 import java.io.IOException;

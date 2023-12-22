@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.repository;
+package dev.lokeshbisht.CourseScheduling.repository;
 
-import dev.lokeshbisht.models.CourseRegistration;
+import dev.lokeshbisht.CourseScheduling.models.CourseRegistration;
 
 import java.util.HashMap;
 

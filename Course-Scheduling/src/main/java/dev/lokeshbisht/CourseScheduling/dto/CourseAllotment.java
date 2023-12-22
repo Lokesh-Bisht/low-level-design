@@ -4,9 +4,9 @@
  * Licensed under the Apache Software License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
  */
 
-package dev.lokeshbisht.dto;
+package dev.lokeshbisht.CourseScheduling.dto;
 
-import dev.lokeshbisht.enums.CourseStatus;
+import dev.lokeshbisht.CourseScheduling.enums.CourseStatus;
 
 public class CourseAllotment {
 
