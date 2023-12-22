@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.service;
+package dev.lokeshbisht.CourseScheduling.service;
 
-import dev.lokeshbisht.models.Course;
+import dev.lokeshbisht.CourseScheduling.models.Course;
 
 public interface CourseService {
 

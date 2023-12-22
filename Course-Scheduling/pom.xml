@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>geektrust</artifactId>
+    <groupId>dev.lokeshbisht</groupId>
+    <artifactId>CourseScheduling</artifactId>
     <version>1.0</version>
     <dependencies>
         <dependency>
@@ -34,7 +34,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
-                    <finalName>geektrust</finalName> <!-- Please do not change this final artifact name-->
+                    <finalName>CourseScheduling</finalName> <!-- Please do not change this final artifact name-->
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
@@ -43,7 +43,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <!-- This is the main class of your program which will be executed-->
-                            <mainClass>com.example.geektrust.Main</mainClass>
+                            <mainClass>dev.lokeshbisht.CourseScheduling.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

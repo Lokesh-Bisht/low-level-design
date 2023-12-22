@@ -2,7 +2,7 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.models;
+package dev.lokeshbisht.CourseScheduling.models;
 
 public class Course {
 

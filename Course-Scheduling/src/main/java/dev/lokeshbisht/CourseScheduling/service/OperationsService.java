@@ -2,7 +2,7 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.service;
+package dev.lokeshbisht.CourseScheduling.service;
 
 public interface OperationsService {
 
