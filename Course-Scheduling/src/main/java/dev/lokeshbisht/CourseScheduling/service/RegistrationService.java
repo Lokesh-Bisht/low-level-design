@@ -2,9 +2,9 @@
  * Author: Lokesh Bisht
  */
 
-package dev.lokeshbisht.service;
+package dev.lokeshbisht.CourseScheduling.service;
 
-import dev.lokeshbisht.dto.CourseAllotment;
+import dev.lokeshbisht.CourseScheduling.dto.CourseAllotment;
 
 import java.util.List;
 

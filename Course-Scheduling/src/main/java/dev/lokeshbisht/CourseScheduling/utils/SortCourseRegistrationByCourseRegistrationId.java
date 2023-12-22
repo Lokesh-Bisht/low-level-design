@@ -1,6 +1,6 @@
-package dev.lokeshbisht.utils;
+package dev.lokeshbisht.CourseScheduling.utils;
 
-import dev.lokeshbisht.models.CourseRegistration;
+import dev.lokeshbisht.CourseScheduling.models.CourseRegistration;
 
 import java.util.Comparator;
 
